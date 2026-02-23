@@ -353,5 +353,8 @@ function confirmQuit() {
         <span>Level {{ level }} • {{ levelMeta.name }} • {{ questionsAnswered }} answered</span>
       </div>
     </div>
+    <footer class="mt-16 text-center text-slate-500">
+        Made with ❤️ by <a href="mailto:yusufikeolapo2002@gmail.com" target="_blank" class="text-violet-400 hover:text-violet-300 transition-colors">ibrowebdev</a>
+      </footer>
   </div>
 </template>
