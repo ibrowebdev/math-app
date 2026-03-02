@@ -6,8 +6,9 @@ import LevelSelect from './components/LevelSelect.vue'
 import GameArena from './components/GameArena.vue'
 import GameOver from './components/GameOver.vue'
 import ScoreBoard from './components/ScoreBoard.vue'
+import PracticeMode from './components/PracticeMode.vue'
 
-const currentScreen = ref('home') // home, levelSelect, game, gameOver, scoreboard
+const currentScreen = ref('home') // home, levelSelect, game, gameOver, scoreboard, practice
 const selectedLevel = ref(1)
 const gameResult = ref(null)
 
@@ -34,6 +35,10 @@ function goToScoreboard() {
   currentScreen.value = 'scoreboard'
 }
 
+function goToPractice() {
+  currentScreen.value = 'practice'
+}
+
 function playAgain() {
   currentScreen.value = 'game'
 }
@@ -56,6 +61,7 @@ function playAgain() {
           v-if="currentScreen === 'home'"
           @start="goToLevelSelect"
           @scoreboard="goToScoreboard"
+          @practice="goToPractice"
         />
         <LevelSelect
           v-else-if="currentScreen === 'levelSelect'"
@@ -78,6 +84,10 @@ function playAgain() {
         />
         <ScoreBoard
           v-else-if="currentScreen === 'scoreboard'"
+          @back="goHome"
+        />
+        <PracticeMode
+          v-else-if="currentScreen === 'practice'"
           @back="goHome"
         />
       </Transition>
