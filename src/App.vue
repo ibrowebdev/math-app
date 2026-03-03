@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import { Analytics } from '@vercel/analytics/vue';
 import HomeScreen from './components/HomeScreen.vue'
 import LevelSelect from './components/LevelSelect.vue'
 import GameArena from './components/GameArena.vue'
@@ -45,7 +44,6 @@ function playAgain() {
 </script>
 
 <template>
-   <Analytics />
   <div class="min-h-screen bg-slate-950 relative overflow-hidden">
     <!-- Ambient background effects -->
     <div class="fixed inset-0 pointer-events-none z-0">
